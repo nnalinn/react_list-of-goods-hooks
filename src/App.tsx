@@ -43,7 +43,7 @@ export const App: React.FC = () => {
     );
   };
 
-  const resetOrder = (): void => {
+  const resetGoodsOrder = (): void => {
     setGoods([...goodsFromServer]);
     setActiveButton(SortType.None);
   };
@@ -53,7 +53,7 @@ export const App: React.FC = () => {
       <div className="buttons">
         <button
           type="button"
-          className={`button is-info ${activeButton === SortType.Alphabetical ? '' : 'is-light'}`}
+          className={`button is-info ${activeButton === SortType.Alphabetical ? 'is-primary' : 'is-light'}`}
           onClick={sortAlphabetically}
         >
           Sort alphabetically
@@ -61,7 +61,7 @@ export const App: React.FC = () => {
 
         <button
           type="button"
-          className={`button is-success ${activeButton === SortType.Length ? '' : 'is-light'}`}
+          className={`button is-success ${activeButton === SortType.Length ? 'is-primary' : 'is-light'}`}
           onClick={sortByLength}
         >
           Sort by length
@@ -69,7 +69,7 @@ export const App: React.FC = () => {
 
         <button
           type="button"
-          className={`button is-warning ${activeButton === SortType.Reverse ? '' : 'is-light'}`}
+          className={`button is-warning ${activeButton === SortType.Reverse ? 'is-primary' : 'is-light'}`}
           onClick={reverseOrder}
         >
           Reverse
@@ -79,7 +79,7 @@ export const App: React.FC = () => {
           <button
             type="button"
             className="button is-danger"
-            onClick={resetOrder}
+            onClick={resetGoodsOrder}
           >
             Reset
           </button>
